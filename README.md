@@ -26,6 +26,13 @@ Or adding this line into your main js file
 console.log(process.version)
 ```
 
+## How to update npm version
+1. Go to shell and type
+```sh
+npm install -g npm@8.19.2
+```
+you can change the version to the latest npm update
+
 ## How to keep replit running
 1. Add this code below to any of your file
 ```js
