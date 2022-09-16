@@ -12,8 +12,48 @@ npm init -y && npm i --save-dev node@18 && npm config set prefix=$(pwd)/node_mod
 run = "npm start"
 ```
 3. Add this to package.json
-```sh
+```json
 "script": {
   "start": "node index.js"
 }
+```
+4. Check the version by execute this command on shell
+```sh
+node --version
+```
+Or adding this line into your main js file
+```js
+console.log(process.version)
+```
+
+## How to keep replit running
+1. Add this code below to any of your file
+```js
+const express = require('express');
+const app = express();
+
+app.use(express.urlencoded({ extended: true, limit: '50mb' }))
+app.use(express.json({limit: '50mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
+
+app.all('/', (req, res)=>{
+  res.status(200).json({
+    status: 200
+  })
+})
+
+function keepAlive(){
+  app.listen(3000, () => {
+    console.log("Server is Ready!")
+  });
+}
+
+/* making this in another file
+ * module.exports = keepAlive; //Add this if you want to adding this into another fil
+ * // another file:
+ * keepAlive() //Add this to another file after importing this file
+ */
+ 
+// or running this in current file
+keepAlive()
 ```
