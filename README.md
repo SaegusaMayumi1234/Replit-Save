@@ -57,3 +57,4 @@ function keepAlive(){
 // or running this in current file
 keepAlive()
 ```
+2. Make an account in robouptime and make a monitor for your replit link
