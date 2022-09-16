@@ -58,3 +58,7 @@ function keepAlive(){
 keepAlive()
 ```
 2. Make an account in robouptime and make a monitor for your replit link
+3. Also replace all .replit text with the line below
+```sh
+run = "while true; do npm start; sleep 2; done"
+```
